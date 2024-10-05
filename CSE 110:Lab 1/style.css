@@ -1,6 +1,6 @@
 
 #Section_1, #Section_2, #Section_3{
-    scroll-margin-top: 143px;
+    scroll-margin-top: 116px;
     display: inline-block;
 }
 #navbar {
@@ -59,4 +59,30 @@ li a:hover {
     color: white;
     font-size: 28px;
     overflow: scroll;
+}
+#Section_1 img, #Section_2 img{
+    max-width: 100%;
+
+}
+
+@media (max-width:800px) {
+    #navbar ul {
+        display: none;
+    }
+
+    #navbar img {
+        max-width: 75%;
+    }
+
+    h2 {
+        font-size:24px
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
 }

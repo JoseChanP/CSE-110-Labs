@@ -74,6 +74,12 @@ function App() {
               color: currentTheme.textColor,
               background: currentTheme.noteColor,
             }}
+            onFocus={(event) => {
+              event.currentTarget.style.backgroundColor = "#e0f7fa";
+            }}
+            onBlur={(event) => {
+              event.currentTarget.style.backgroundColor = "";
+            }}
             onChange={(event) =>
               setCreateNote({ ...createNote, title: event.target.value })
             }
@@ -87,6 +93,12 @@ function App() {
               color: currentTheme.textColor,
               background: currentTheme.noteColor,
             }}
+            onFocus={(event) => {
+              event.currentTarget.style.backgroundColor = "#e0f7fa"; 
+            }}
+            onBlur={(event) => {
+              event.currentTarget.style.backgroundColor = "";
+            }}
             onChange={(event) =>
               setCreateNote({ ...createNote, content: event.target.value })
             }
@@ -98,6 +110,12 @@ function App() {
             style={{
               color: currentTheme.textColor,
               background: currentTheme.noteColor, 
+            }}
+            onFocus={(event) => {
+              event.currentTarget.style.backgroundColor = "#e0f7fa";
+            }}
+            onBlur={(event) => {
+              event.currentTarget.style.backgroundColor = "";
             }}
             onChange={(event) =>
               setCreateNote({ ...createNote, label: event.target.value as Label})

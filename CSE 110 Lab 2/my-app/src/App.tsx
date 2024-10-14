@@ -1,10 +1,8 @@
 import "./App.css";
-import { Label, Note } from "./types"; // Import the Label type from the appropriate module
-import { dummyNotesList } from "./constants"; // Import the dummyNotesList from the appropriate module
-import { ClickCounter } from "./hooksExercise";
+import { Label, Note } from "./types"; 
+import { dummyNotesList } from "./constants"; 
 import { useState, useEffect, useContext } from "react";
 import { ThemeContext, themes } from "./themeContext";
-import { isThrowStatement } from "typescript";
 
 function App() {
   const [favorites, setFavorites] = useState<string[]>([]);
@@ -168,7 +166,6 @@ function App() {
                 >
                   x
                 </button>{" "}
-                {/* Existing delete button */}
               </div>
               <div>
                 <h2 contentEditable='true'> {note.title} </h2>

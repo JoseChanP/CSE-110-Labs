@@ -68,7 +68,6 @@ export const StickyNotes = () => {
           className="app-container"
           style={{ background: currentTheme.background }}
         >
-          // your code from App.tsx
           <form
             className="note-form"
             style={{ background: currentTheme.background }}

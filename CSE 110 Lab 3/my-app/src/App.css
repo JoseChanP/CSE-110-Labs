@@ -128,3 +128,7 @@ body {
   background-color: rgb(220, 89, 89);
   color: white;
  }
+
+ .App-body {
+  text-align: center;
+ }

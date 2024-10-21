@@ -14,8 +14,7 @@ describe("Create StickyNote", () => {
    
    // Please make sure your sticky note has a title and content input field with the following placeholders.
       const createNoteTitleInput = screen.getByPlaceholderText("Note Title");
-      const createNoteContentTextarea =
-        screen.getByPlaceholderText("Note Content");
+      const createNoteContentTextarea = screen.getByPlaceholderText("Note Content");
       const createNoteButton = screen.getByText("Create Note");
    
       fireEvent.change(createNoteTitleInput, { target: { value: "New Note" } });

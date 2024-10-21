@@ -1,10 +1,10 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, within } from "@testing-library/react";
 import { ToDoList } from "./toDoList";
 
 describe("Check all items on screen",  () => {
-    render(<ToDoList />);
 
     test("Check items", () => {
+        render(<ToDoList />);
         const apple = screen.getByText("Apples");
         const banana = screen.getByText("Bananas");
         expect(apple).toBeInTheDocument();
@@ -12,9 +12,13 @@ describe("Check all items on screen",  () => {
     });
 
     test("Check number of items ticked", () => {
-        const apple = screen.getByText("Apples");
-        const banana = screen.getByText("Bananas");
-        fireEvent.click(apple);
-        fireEvent.click(banana);
+        render(<ToDoList />);
+        const allCheckboxes = screen.getAllByRole('checkbox');
+        fireEvent.click(allCheckboxes[0]);
+        fireEvent.click(allCheckboxes[0]);
+
+        const msg = screen.getByText(/Items bought:/i);
+        expect(msg).toBeInTheDocument();
+        
     });
 });

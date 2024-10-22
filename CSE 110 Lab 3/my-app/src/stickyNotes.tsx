@@ -76,6 +76,7 @@ export const StickyNotes = () => {
             <input
               placeholder="Note Title"
               id="title_input"
+              data-testid='title_input'
               style={{
                 color: currentTheme.textColor,
                 background: currentTheme.noteColor,
@@ -95,6 +96,7 @@ export const StickyNotes = () => {
             <input
               placeholder="Note Content"
               id="content_input"
+              data-testid='content_input'
               style={{
                 color: currentTheme.textColor,
                 background: currentTheme.noteColor,
@@ -112,6 +114,7 @@ export const StickyNotes = () => {
             ></input>
             <select
               id="label_select"
+              data-testid='label_input'
               style={{
                 color: currentTheme.textColor,
                 background: currentTheme.noteColor,
@@ -143,7 +146,8 @@ export const StickyNotes = () => {
             </button>
             <button onClick={toggleTheme}> Toggle Theme </button>
           </form>
-          <div className="notes-grid">
+          <div className="notes-grid"
+          data-testid='dummyNotes'>
             {notes.map((note) => (
               <div
                 key={note.id}
@@ -154,6 +158,7 @@ export const StickyNotes = () => {
                   color: currentTheme.textColor,
                 }}
                 onClick={() => setSelectedNote(note)}
+                data-testid={"Note" + note.id}
               >
                 <div className="notes-header">
                   <button
@@ -173,14 +178,18 @@ export const StickyNotes = () => {
                     onClick={() => {
                       setNotes(notes.filter((n) => n.id !== note.id));
                     }}
+                    data-testid={'note' + note.id + 'delete'}
                   >
                     x
                   </button>{" "}
                 </div>
                 <div>
-                  <h2 contentEditable="true"> {note.title} </h2>
-                  <p contentEditable="true"> {note.content} </p>
-                  <p contentEditable="true"> {note.label} </p>
+                  <h2 contentEditable="true"
+                  data-testid={note.title}> {note.title} </h2>
+                  <p contentEditable="true"
+                  data-testid={note.content}> {note.content} </p>
+                  <p contentEditable="true"
+                  data-testid={note.id + ' ' + note.label}> {note.label} </p>
                 </div>
               </div>
             ))}

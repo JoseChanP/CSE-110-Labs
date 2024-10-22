@@ -75,16 +75,7 @@ describe("Create StickyNote", () => {
   });
  });
 
- test("Deleting Notes", ()=> {
-  render(<StickyNotes/>)
-  
-  dummyNotesList.forEach(async function(notes, index) {
-    const deleteButton = screen.getByTestId('note' + notes.id + 'delete')
-    fireEvent.click(deleteButton);
-    var deletedNode = await screen.queryByTestId("Note" + notes.id)
-    expect(deletedNode).not.toBeInTheDocument();
-  })
- })
+ 
 
  test("Edge Case", () => {
   function makeid(length: number) {
@@ -122,3 +113,14 @@ describe("Create StickyNote", () => {
   });
 
 });
+
+test("Deleting Notes", ()=> {
+  render(<StickyNotes/>)
+  
+  dummyNotesList.forEach(async function(notes, index) {
+    const deleteButton = screen.getByTestId('note' + notes.id + 'delete')
+    fireEvent.click(deleteButton);
+    var deletedNode = await screen.queryByTestId("Note" + notes.id)
+    expect(deletedNode).not.toBeInTheDocument();
+  })
+ })
